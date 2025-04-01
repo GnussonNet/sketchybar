@@ -12,7 +12,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top y_offset=10 margin=7 height=30 blur_radius=30 color=0xff0d1117 shadow=off padding_left=5 padding_right=0
+sketchybar --bar position=top y_offset=10 margin=7 height=30 blur_radius=30 color=0xff0d1117 shadow=off padding_left=0 padding_right=0
 
 
 
@@ -35,10 +35,10 @@ default=(
   background.height=20
   icon.color=0xff000000
   label.color=0xff000000
-  icon.padding_left=10
-  icon.padding_right=5
-  label.padding_left=5
-  label.padding_right=10
+  icon.padding_left=8
+  icon.padding_right=4
+  label.padding_left=3
+  label.padding_right=8
 )
 sketchybar --default "${default[@]}"
 
@@ -76,7 +76,7 @@ done
 #           --subscribe space.$sid aerospace_workspace_change \
 
 sketchybar --add item chevron left \
-           --set chevron icon= label.drawing=off background.color=0xff0d1117 icon.color=0xffff7b72 padding_left=5 padding_right=5  \
+           --set chevron icon= label.drawing=off background.color=0xff0d1117 icon.color=0xffff7b72 padding_left=2 padding_right=2  \
 
 sketchybar --add item front_app left \
            --set front_app icon.font="sketchybar-app-font:Regular:16.0" script="$PLUGIN_DIR/front_app.sh" \
