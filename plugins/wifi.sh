@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-INFO="$(ipconfig getsummary en0 | awk -F ' SSID : '  '/ SSID : / {print $2}')"
+INFO="$(en="$(networksetup -listallhardwareports | awk '/Wi-Fi|AirPort/{getline; print $NF}')"; ipconfig getsummary "$en" | grep -Fxq "  Active : FALSE" || networksetup -listpreferredwirelessnetworks "$en" | sed -n '2s/^\t//p')"
 
 if [ -z "${INFO}" ]; then
   ICON="󰖪"
